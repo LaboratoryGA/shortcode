@@ -29,6 +29,9 @@ following syntax anywhere on the site - even in publish pages:
 ^[ShortcodeClass (arg1="Something" arg2="Something else")]^
 ```
 
+**Note that even if no arguments are required, you must still have the open
+and close brackets**
+
 In the above example, "ShortcodeClass" may be PHP classes whatsoever which
 contains a method "show" which takes in a single parameter, which will be an
 instance of "ShortcodeContext". This object will contain all the relevant
@@ -63,3 +66,8 @@ The syntax for performing this is:
 ^[ShortcodeClass end]^
 <p>All is well in the world</p>
 ```
+
+##Default Shortcodes
+Some simple shortcode classes are included in this module:
+* ShortcodeVersion - displays the current version number of the module
+* ShortcodeComponentBridge - allows dynamic embedding of a templater component
