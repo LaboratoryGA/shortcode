@@ -41,6 +41,13 @@ editor, *sometimes* the editor will auto-magically change the space directly
 **preceeding** the open bracket with an HTML entity ```&nbsp;``` - if this
 happens, it will cause the shortcode to become unparsable.
 
+Another unfortunate *gotcha* is embedding shortcodes (when a "body" is present).
+The original implementation of this module used expression parsing in such a 
+way as to permit indefinite depth in embedding shortcodes. Unfortunately, this 
+resulting in a significant performance hit, and as a result, support for 
+embedding shortcodes within shortcodes had to be limited. As of now, you cannot 
+embed 2 identical shortcodes within each other.
+
 ##Advanced Topics
 ###Shortcode Body
 One of the great advantages that shortcodes have over pure components (aside
