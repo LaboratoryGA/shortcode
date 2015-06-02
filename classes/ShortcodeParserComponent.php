@@ -53,8 +53,10 @@ final class ShortcodeParserComponent implements TemplaterComponent {
 		if (strpos($_SERVER['REQUEST_URI'], '/intranet/publish/edit_page_fields.php') !== false
 				// nor the template editor
 				|| strpos($_SERVER['REQUEST_URI'], '/intranet/panels/publish_template_content.php') !== false
-				// nor the news editor
+				// nor the NEW news editor
 				|| strpos($_SERVER['REQUEST_URI'], '/intranet/news/create.php') !== false
+				// nor the EXISTING news editor
+				|| strpos($_SERVER['REQUEST_URI'], '/intranet/panels/newsadmin_edit_news.php') !== false
 				// and don't bother if there are no markers
 				|| strpos($contents, '^[') === false) {
 //			die(print_r([
